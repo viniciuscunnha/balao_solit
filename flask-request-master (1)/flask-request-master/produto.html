@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>{{ item[0]}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            body{
+                align-content: center;
+                
+            }
+            #item{
+                display: flex;
+                justify-content:start;
+                margin-left: 50px;
+            }
+            #item img{
+                width: 484;
+                height: 285;
+                
+            }
+            h1{
+                margin-left: 50px;
+            }
+           
+        </style>
+    </head>
+    <body>
+       <h1>{{item[0]}}</h1>
+        <div id="item">
+            <img src={{item[2]}}>
+        </div>
+        
+        <div id="desc">
+            <table class="w3-table-all"> 
+                    <tr>
+                        <td>{{item[0]}}</td>
+                        <td>{{item[1]}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{item[3]}}</td>
+                    </tr>
+            </table>
+        </div>
+
+    </body>
+</html>

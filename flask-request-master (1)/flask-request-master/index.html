@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Pagina Inicial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script languague="javascript"> 
+            function popup(){ window.open('/add','popup','width=200,height=300,scrolling=auto,top=100,left=200') }
+          </script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .itens img{
+               width: 100%;
+               width: 130px;
+               height: 80;
+               overflow: hidden;
+                
+
+            }
+            #items_amostra{
+                margin-top: 100px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            #items_amostra a{
+                text-decoration: none;
+            }
+            body{
+    
+                min-height: 100vh;
+            }
+            a{
+                text-decoration: none;
+            }
+            .btn{
+                border-radius: 3px;
+                padding: 3px;
+                position: absolute;
+                top:10px;
+                right: 10px;
+                
+            }
+            .img{
+            width: 100vw;
+            text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="img">
+            <img src='https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/5c5b0c10-b1a9-4855-9134-d8ada11399a6/201804060010_13164.jpg' width="320" height="205">
+        </div>
+        <a class="btn" href="javascript:popup()">
+            <button>Adicionar item</button>
+        </a>
+        <div id="items_amostra">
+            {% for item, valor, desc in lista %}
+                <a href="/itens/{{loop.index0}}">
+                    <span>
+                        <div class="itens">
+                            {{item}}
+                        </div>
+                    </span>
+                </a>
+            {%endfor%}
+        </div>
+        <div class="w3-container">
+
+          
+            <table class="w3-table-all">
+              <thead>
+              </thead>
+                {% for item, valor, desc in lista %}
+                    {% if valor > 5.0 %}  
+                        <tr>
+                            <td>
+                                <a href="/itens/{{loop.index0}}">
+                                    {{item}}
+                                </a>
+                            </td>
+                        </tr>
+                    {%else%}
+                        <tr>
+                            <td>
+                                <a href="/itens/{{loop.index0}}">
+                                    {{item}}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {%endfor%}
+            </table>
+          </div>
+          
+    </body>
+</html>
